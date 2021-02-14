@@ -15,7 +15,7 @@ public class userService {
 	private userRepository uR;
 	private roleRepository rR;
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
-
+	//injection
 	@Autowired
 	public userService(userRepository userRepository, roleRepository roleRepository,BCryptPasswordEncoder bCryptPasswordEncoder) {
 		this.uR = userRepository;

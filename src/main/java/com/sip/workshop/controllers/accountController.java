@@ -78,7 +78,7 @@ public class accountController {
 		User user = uR.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid User Id:" + id));
 		Role userRole = rR.findByRole(newRole);
 		//HashSet<Role> H=new HashSet<Role>(Arrays.asList(userRole));
-		Set<Role> H = user.getRoles();
+		HashSet<Role> H = (HashSet<Role>)user.getRoles();
 		H.add(userRole);
 		user.setRoles(H);
 		uR.save(user);

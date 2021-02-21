@@ -17,9 +17,9 @@ public class userService {
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	//injection
 	@Autowired
-	public userService(userRepository userRepository, roleRepository roleRepository,BCryptPasswordEncoder bCryptPasswordEncoder) {
-		this.uR = userRepository;
-		this.rR = roleRepository;
+	public userService(userRepository usR, roleRepository roR,BCryptPasswordEncoder bCryptPasswordEncoder) {
+		this.uR = usR;
+		this.rR = roR;
 		this.bCryptPasswordEncoder = bCryptPasswordEncoder;
 	}
 

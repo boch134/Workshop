@@ -44,12 +44,15 @@ public class loginController {
 	@RequestMapping(value = "/registration", method = RequestMethod.POST)
 	public ModelAndView createNewUser(@Valid User user, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView();
+		if (user== null){
+			modelAndView.setViewName("registration");
+		}
 		User userExists = userService.findUserByEmail(user.getEmail());
 		if (userExists != null) {
 			bindingResult.rejectValue("email", "error.user",
 					"There is already a user registered with the email provided");
 		}
-		if (bindingResult.hasErrors()) {
+		if (bindingResult.hasErrors() ) {
 			modelAndView.setViewName("registration");
 		} else {
 			userService.saveUser(user);

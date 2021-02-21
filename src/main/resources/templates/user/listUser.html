@@ -62,7 +62,7 @@
                                     </ul>
                                 </td>
                                 <td>
-                                    <form method="post" th:action="@{/accounts/updateRole}">
+                                    <form method="post" th:action="@{/account/updateRole}">
 
                                         <select name="newrole" class="form-control">
 
@@ -80,11 +80,11 @@
 
                                 <td th:text="${user.active}"></td>
                                 <td><a
-                                        th:href="@{/accounts/enable/{id}/{email} (id=${user.id},email=${user.email})}">Activate</a>
+                                        th:href="@{/account/enable/{id}/{email} (id=${user.id},email=${user.email})}">Activate</a>
                                 </td>
 
                                 <td><a
-                                        th:href="@{/accounts/disable/{id}/{email} (id=${user.id},email=${user.email})}">Disable</a>
+                                        th:href="@{/account/disable/{id}/{email} (id=${user.id},email=${user.email})}">Disable</a>
                                 </td>
 
                             </tr>

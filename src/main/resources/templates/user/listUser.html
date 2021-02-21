@@ -80,11 +80,11 @@
 
                                 <td th:text="${user.active}"></td>
                                 <td><a
-                                        th:href="@{/account/enable/{id}/{email} (id=${user.id},email=${user.email})}">Activate</a>
+                                        th:href="@{/account/enable/{id} id=${user.id}}">Activate</a>
                                 </td>
 
                                 <td><a
-                                        th:href="@{/account/disable/{id}/{email} (id=${user.id},email=${user.email})}">Disable</a>
+                                        th:href="@{/account/disable/{id} id=${user.id}}">Disable</a>
                                 </td>
 
                             </tr>

@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 import java.util.Set;
 
 @Entity
-@Table(name = "Utilisateur")
+@Table(name = "utilisateur")
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

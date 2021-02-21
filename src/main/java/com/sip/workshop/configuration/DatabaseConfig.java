@@ -1,4 +1,3 @@
-/*
 package com.sip.workshop.configuration;
 import com.zaxxer.hikari.*;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,4 +14,3 @@ public class DatabaseConfig {
         return new HikariDataSource(config);
     }
 }
-*/

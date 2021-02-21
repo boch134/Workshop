@@ -3,6 +3,7 @@ package com.sip.workshop.controllers;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -76,7 +77,10 @@ public class accountController {
 	public String UpdateUserRole(@RequestParam("id") int id, @RequestParam("newrole") String newRole) {
 		User user = uR.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid User Id:" + id));
 		Role userRole = rR.findByRole(newRole);
-		user.setRoles(new HashSet<Role>(Arrays.asList(userRole)));
+		//HashSet<Role> H=new HashSet<Role>(Arrays.asList(userRole));
+		Set<Role> H = user.getRoles();
+		H.add(userRole);
+		user.setRoles(H);
 		uR.save(user);
 		return "redirect:list";
 	}

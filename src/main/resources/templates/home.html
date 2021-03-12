@@ -1,5 +1,8 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
 <title>AMS-Dashboard</title> 
 </head>
@@ -8,11 +11,11 @@
 	<div class="container">
 		<div class="starter-template">
 			<h1>Welcome to our Article Managment System Dashboard</h1>
-			<h2>
+			<h2 sec:authorize="hasRole('ADMIN')">
 				1. Visit our Providers, You must have ADMIN role <a
 					th:href="@{/provider/list}">Providers</a>
 			</h2>
-			<h2>
+			<h2 >
 				2. Visit our Article, You must have USER or ADMIN roles<a
 					th:href="@{/article/list}">Articles</a>
 			</h2>

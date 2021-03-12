@@ -49,7 +49,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.and().logout()
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout")) // route	// deconnexio																											// ici/logut
 				.logoutSuccessUrl("/login").and().exceptionHandling() // une fois deconnecté redirection vers login
-				.accessDeniedPage("/403");
+				.accessDeniedPage("/error/403");
 	}
 
 // laisser l'accès aux ressources
